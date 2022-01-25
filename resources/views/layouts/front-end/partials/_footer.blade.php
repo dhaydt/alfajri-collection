@@ -54,7 +54,7 @@
 
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-2 font-weight-bold footer-heder">{{\App\CPU\translate('about_us')}}</h6>
+                <h6 class="text-uppercase mb-2 font-weight-bold footer-heder">{{\App\CPU\translate('Alfajri')}}</h6>
 
 
                 <ul class="widget-list" style="padding-bottom: 10px">

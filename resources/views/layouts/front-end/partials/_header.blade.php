@@ -236,7 +236,7 @@
 
         {{-- {{ dd($web_config) }} --}}
 
-        <a class="navbar-brand d-none d-sm-block mr-0
+        <a class="navbar-brand d-none d-sm-block
           flex-shrink-0 tab-logo" href="{{route('home')}}" style="min-width: 7rem;">
           <img width="250" height="60" style="height: 60px!important;"
                          src="{{asset("storage/company")."/".$web_config['web_logo']->value}}"
@@ -347,6 +347,10 @@
               <a class="dropdown-item" href="{{route('customer.auth.register')}}">
                 <i class="fa fa-user-circle {{Session::get('direction') === " rtl" ? 'ml-2' : 'mr-2'
                   }}"></i>{{\App\CPU\translate('sign_up')}}
+              </a>
+              <a class="dropdown-item" href="{{route('admin.dashboard')}}">
+                <i class="fa fa-cogs {{Session::get('direction') === " rtl" ? 'ml-2' : 'mr-2'
+                  }}"></i>{{\App\CPU\translate('admin_panel')}}
               </a>
             </div>
           </div>
