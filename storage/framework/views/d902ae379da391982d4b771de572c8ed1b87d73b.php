@@ -1,0 +1,1 @@
+<?php /**PATH /home/mh/code/Pak etek/alfajri/resources/views/layouts/back-end/partials/_front-settings.blade.php ENDPATH**/ ?>
