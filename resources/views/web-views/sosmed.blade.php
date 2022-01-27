@@ -14,47 +14,89 @@
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/vendor.min.css">
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/vendor/icon-set/style.css">
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/theme.minc619.css?v=1.0">
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/toastr.css">
+    <style>
+        .main-row {
+            background-image: url('assets/front-end/img/al-bg.jpg');
+            height: 100vh;
+        }
+        .card {
+            background-color: transparent;
+            height: 80vh;
+            overflow-y: scroll;
+        }
+        .card-title{
+            font-size: 36px;
+            color: #fff;
+        }
+        .wa-link {
+            position: relative;
+            border: 3px solid #fff;
+            border-radius: 25px;
+        }
+        .wa-link span{
+            position: absolute;
+            left: 37%;
+            font-size: 24px;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .card-subtitle {
+            color: #fff;
+            font-weight: 800;
+        }
+        .subtitle {
+            font-size: 24px;
+        }
+    </style>
 </head>
 
 <body>
 
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main" class="main">
-    <div class="position-fixed top-0 right-0 left-0 bg-img-hero"
-         style="height: 32rem; background-image: url({{asset('assets/admin')}}/svg/components/abstract-bg-4.svg);">
-        <!-- SVG Bottom Shape -->
-        <figure class="position-absolute right-0 bottom-0 left-0">
-            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1921 273">
-                <polygon fill="#fff" points="0,273 1921,273 1921,0 "/>
-            </svg>
-        </figure>
-        <!-- End SVG Bottom Shape -->
-    </div>
-
     <!-- Content -->
-    <div class="container py-5 py-sm-7">
-        <label class="badge badge-soft-success float-right" style="z-index: 9;position: absolute;right: 0.5rem;top: 0.5rem;">{{\App\CPU\translate('Software version')}} : {{ env('SOFTWARE_VERSION') }}</label>
+    <div class="container py-0 py-sm-7">
         @php($e_commerce_logo=\App\Model\BusinessSetting::where(['type'=>'company_web_logo'])->first()->value)
-        <div class="row justify-content-center">
-            <div class="col-md-5">
+        <div class="row main-row justify-content-center">
+            <div class="col-md-5 pt-5">
                 <a class="d-flex justify-content-center mb-5" href="javascript:">
                     <img class="z-index-2" src="{{asset("storage/company/".$e_commerce_logo)}}" alt="Logo"
                          onerror="this.src='{{asset('assets/back-end/img/400x400/img2.jpg')}}'"
                          style="width: 8rem;">
                 </a>
-                <div class="card">
+                <div class="card pb-5">
                     <div class="card-body">
-                      <h5 class="card-title">Official Alfajri Collecion</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
+                      <h5 class="card-title text-center">Contact Us</h5>
+                      <h6 class="card-subtitle mb-2 text-center mt-2">Alfajri Official</h6>
+                      <div class="row flex-column">
+                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                            <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
+                            <span class="mx-auto">Admin 1</span>
+                        </a>
+                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                            <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
+                            <span class="mx-auto">Admin 2</span>
+                        </a>
+                      </div>
+                      <h5 class="card-subtitle mb-2 subtitle text-center mt-8">Official Social Media</h5>
+                      <div class="row flex-column">
+                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                            <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
+                            <span class="mx-auto">Admin 1</span>
+                        </a>
+                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                            <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
+                            <span class="mx-auto">Admin 2</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
             </div>
