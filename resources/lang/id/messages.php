@@ -1446,4 +1446,5 @@
   'add_floating_button' => 'Add floating button',
   'admin_panel' => 'Admin panel',
   'Alfajri' => 'Alfajri',
+  'Alfajri | Social Contact' => 'Alfajri | Social Contact',
 );

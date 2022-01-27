@@ -3,9 +3,11 @@
 /public/storage
 # /storage/*.key
 /vendor
-/public/
+/public
 .env
-/storage/
+!public/
+.htaccess
+htaccess
 /resources/lang/
 index.copy.php
 # .env.backup
@@ -14,3 +16,5 @@ index.copy.php
 # Homestead.yaml
 # npm-debug.log
 # yarn-error.log
+/storage
+.htaccess

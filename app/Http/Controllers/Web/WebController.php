@@ -33,6 +33,13 @@ use Illuminate\Support\Facades\Session;
 
 class WebController extends Controller
 {
+    public function sosmed()
+    {
+        // dd('work');
+
+        return view('web-views.sosmed');
+    }
+
     public function maintenance_mode()
     {
         $maintenance_mode = Helpers::get_business_settings('maintenance_mode') ?? 0;
