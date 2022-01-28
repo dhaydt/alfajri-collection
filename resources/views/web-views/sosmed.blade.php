@@ -23,34 +23,90 @@
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/toastr.css">
     <style>
         .main-row {
-            background-image: url('assets/front-end/img/al-bg.jpg');
-            height: 100vh;
             position: fixed;
-            width: 100vw;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+        }
+        .main-row::before{
+            content: "";
+            position: fixed;
+            background-color: #00000026;
+            z-index: -1;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
         }
         .card {
-            background-color: transparent;
-            height: 80vh;
+            /* background-color: transparent;
+            height: 100vh;
+            overflow-y: scroll; */
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            height: 93vh;
+            background: inherit;
             overflow-y: scroll;
         }
+        .card::before{
+            content: "";
+            position: fixed;
+            background: inherit;
+            z-index: -1;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            border-radius: 10px;
+            bottom: 7vh;
+            box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+            backdrop-filter: blur(1px) saturate(100%) contrast(56%) brightness(128%);
+            margin: -20px;
+        }
+        .card-header {
+            background-color: transparent;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
         .card-title{
-            font-size: 36px;
+            font-size: 30px;
             color: #fff;
         }
         .wa-link {
-            position: relative;
+            /* position: relative;
             border: 3px solid #fff;
-            border-radius: 25px;
-            background-color: #e4cad875;
+            border-radius: 55px;
+            padding: 5px;
+            background-color: #e4cad875; */
+            display: inline-block;
+            /* padding: 24px 32px; */
+            border: 0;
+            text-decoration: none;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: capitalize;
+        }
+
+        .wa-link:hover {
+            background-color: rgba(255,255,255,0.2);
         }
         .wa-link img {
-            height: 45px;
+            height: 38px;
         }
         .wa-link span{
             position: absolute;
             width: 100%;
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
             color: #fff;
             font-weight: 900;
         }
@@ -58,9 +114,6 @@
         .card-subtitle {
             color: #fff;
             font-weight: 800;
-        }
-        .subtitle {
-            font-size: 24px;
         }
     </style>
 </head>
@@ -72,34 +125,35 @@
     <!-- Content -->
     <div class="container py-0 py-sm-7">
         @php($e_commerce_logo=\App\Model\BusinessSetting::where(['type'=>'company_web_logo'])->first()->value)
-        <div class="row main-row justify-content-center">
-            <div class="col-md-5 pt-3">
-                <a class="d-flex justify-content-center mb-5" href="javascript:">
-                    <img class="z-index-2" src="{{asset("storage/company/".$e_commerce_logo)}}" alt="Logo"
-                         onerror="this.src='{{asset('assets/back-end/img/400x400/img2.jpg')}}'"
-                         style="width: 8rem;">
-                </a>
+        <div class="row main-row justify-content-center" style="background-image: url('assets/front-end/img/al-bg.jpg');">
+            <div class="col-md-5 col-12">
                 <div class="card pb-5">
-                    <div class="card-body">
+                    <div class="card-header d-flex justify-content-center">
+                        <a class="d-flex justify-content-center mb-5" href="{{ route('home') }}">
+                            <img class="z-index-2" src="{{asset("storage/company/".$e_commerce_logo)}}" alt="Logo"
+                                 onerror="this.src='{{asset('assets/back-end/img/400x400/img2.jpg')}}'"
+                                 style="width: 8rem;">
+                        </a>
+                    </div>
+                    <div class="card-body pt-0">
                       <h5 class="card-title text-center">Contact Us</h5>
-                      <h6 class="card-subtitle mb-2 text-center mt-2">Alfajri Official</h6>
-                      <div class="row flex-column">
-                        <a href="https://api.whatsapp.com/send?phone=6282124714356" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                      <div class="row flex-column mx-2">
+                        <a href="https://api.whatsapp.com/send?phone=6282124714356" target="_blank" class="btn btn-outline-secondary mt-2 d-flex justify-content-start wa-link">
                             <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
                             <span class="mx-auto">Admin 1</span>
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=6281283966436" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                        <a href="https://api.whatsapp.com/send?phone=6281283966436" target="_blank" class="btn btn-outline-secondary mt-3 d-flex justify-content-start wa-link">
                             <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
                             <span class="mx-auto">Admin 2</span>
                         </a>
                       </div>
-                      <h5 class="card-subtitle mb-2 subtitle text-center mt-8">Official Social Media</h5>
-                      <div class="row flex-column">
-                        <a href="https://www.tiktok.com/@alfajri_official01"  target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link sos">
+                      <h5 class="card-title text-center mt-4">Social Media</h5>
+                      <div class="row flex-column pb-4 mx-2">
+                        <a href="https://www.tiktok.com/@alfajri_official01"  target="_blank" class="btn btn-outline-secondary mt-2 d-flex justify-content-start wa-link sos">
                             <img src="{{ asset('assets/front-end/img/tiktok.png') }}" alt="wa">
                             <span class="mx-auto">Tiktok</span>
                         </a>
-                        <a href="https://www.instagram.com/alfajri_official01/" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link sos">
+                        <a href="https://www.instagram.com/alfajri_official01/" target="_blank" class="btn btn-outline-secondary mt-3 d-flex justify-content-start wa-link sos">
                             <img src="{{ asset('assets/front-end/img/ig.png') }}" alt="wa">
                             <span class="mx-auto">Instagram</span>
                         </a>
