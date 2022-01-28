@@ -17,4 +17,5 @@ index.copy.php
 # npm-debug.log
 # yarn-error.log
 /storage/
+!/vendor/
 # .htaccess
