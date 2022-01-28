@@ -1,1 +1,0 @@
-<?php /**PATH /home/mh/code/project.co/Tigatech/umkm-shop/resources/views/layouts/back-end/partials/_front-settings.blade.php ENDPATH**/ ?>

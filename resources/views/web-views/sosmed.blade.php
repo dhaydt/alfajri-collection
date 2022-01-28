@@ -25,6 +25,8 @@
         .main-row {
             background-image: url('assets/front-end/img/al-bg.jpg');
             height: 100vh;
+            position: fixed;
+            width: 100vw;
         }
         .card {
             background-color: transparent;
@@ -39,9 +41,10 @@
             position: relative;
             border: 3px solid #fff;
             border-radius: 25px;
+            background-color: #e4cad875;
         }
-        .sos img {
-            height: 48px;
+        .wa-link img {
+            height: 45px;
         }
         .wa-link span{
             position: absolute;
@@ -70,7 +73,7 @@
     <div class="container py-0 py-sm-7">
         @php($e_commerce_logo=\App\Model\BusinessSetting::where(['type'=>'company_web_logo'])->first()->value)
         <div class="row main-row justify-content-center">
-            <div class="col-md-5 pt-5">
+            <div class="col-md-5 pt-3">
                 <a class="d-flex justify-content-center mb-5" href="javascript:">
                     <img class="z-index-2" src="{{asset("storage/company/".$e_commerce_logo)}}" alt="Logo"
                          onerror="this.src='{{asset('assets/back-end/img/400x400/img2.jpg')}}'"
@@ -94,11 +97,11 @@
                       <div class="row flex-column">
                         <a href="https://www.tiktok.com/@alfajri_official01"  target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link sos">
                             <img src="{{ asset('assets/front-end/img/tiktok.png') }}" alt="wa">
-                            <span class="mx-auto">Tiktok Official</span>
+                            <span class="mx-auto">Tiktok</span>
                         </a>
                         <a href="https://www.instagram.com/alfajri_official01/" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link sos">
                             <img src="{{ asset('assets/front-end/img/ig.png') }}" alt="wa">
-                            <span class="mx-auto">Instagram Official</span>
+                            <span class="mx-auto">Instagram</span>
                         </a>
                       </div>
                     </div>
