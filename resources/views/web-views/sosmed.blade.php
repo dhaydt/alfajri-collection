@@ -40,9 +40,13 @@
             border: 3px solid #fff;
             border-radius: 25px;
         }
+        .sos img {
+            height: 48px;
+        }
         .wa-link span{
             position: absolute;
-            left: 37%;
+            width: 100%;
+            text-align: center;
             font-size: 24px;
             color: #fff;
             font-weight: 900;
@@ -77,24 +81,24 @@
                       <h5 class="card-title text-center">Contact Us</h5>
                       <h6 class="card-subtitle mb-2 text-center mt-2">Alfajri Official</h6>
                       <div class="row flex-column">
-                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                        <a href="https://api.whatsapp.com/send?phone=6282124714356" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
                             <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
                             <span class="mx-auto">Admin 1</span>
                         </a>
-                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
+                        <a href="https://api.whatsapp.com/send?phone=6281283966436" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
                             <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
                             <span class="mx-auto">Admin 2</span>
                         </a>
                       </div>
                       <h5 class="card-subtitle mb-2 subtitle text-center mt-8">Official Social Media</h5>
                       <div class="row flex-column">
-                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
-                            <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
-                            <span class="mx-auto">Admin 1</span>
+                        <a href="https://www.tiktok.com/@alfajri_official01"  target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link sos">
+                            <img src="{{ asset('assets/front-end/img/tiktok.png') }}" alt="wa">
+                            <span class="mx-auto">Tiktok Official</span>
                         </a>
-                        <a type="button" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link">
-                            <img src="{{ asset('assets/front-end/img/WhatsApp.png') }}" alt="wa">
-                            <span class="mx-auto">Admin 2</span>
+                        <a href="https://www.instagram.com/alfajri_official01/" target="_blank" class="btn btn-outline-secondary mt-4 d-flex justify-content-start wa-link sos">
+                            <img src="{{ asset('assets/front-end/img/ig.png') }}" alt="wa">
+                            <span class="mx-auto">Instagram Official</span>
                         </a>
                       </div>
                     </div>
