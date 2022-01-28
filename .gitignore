@@ -1,14 +1,13 @@
-/node_modules
+# /node_modules
 /public/hot
 /public/storage
 # /storage/*.key
-/vendor
-/public
+# /vendor
+# /public
 .env
-!public/
 # .htaccess
 # htaccess
-/resources/lang/
+# /resources/lang/
 index.copy.php
 # .env.backup
 # .phpunit.result.cache
@@ -17,5 +16,5 @@ index.copy.php
 # npm-debug.log
 # yarn-error.log
 /storage/
-!/vendor/
+# !/vendor/
 # .htaccess
