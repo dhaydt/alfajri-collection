@@ -26,59 +26,28 @@
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/toastr.css">
     <style>
         .slider{
-  max-width: 1100px;
-  display: flex;
-}
-.slider .card{
-  flex: 1;
-  margin: 0 10px;
-  background: #fff;
-}
-.slider .card .img{
-  height: 200px;
-  width: 100%;
-}
-.slider .card .img img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.slider .card .content{
-  padding: 10px 20px;
-}
-.card .content .title{
-  font-size: 25px;
-  font-weight: 600;
-}
-.card .content .sub-title{
-  font-size: 20px;
-  font-weight: 600;
-  color: #e74c3c;
-  line-height: 20px;
-}
-.card .content p{
-  text-align: justify;
-  margin: 10px 0;
-}
-.card .content .btn{
-  display: block;
-  text-align: left;
-  margin: 10px 0;
-}
-.card .content .btn button{
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.card .content .btn button:hover{
-  transform: scale(0.9);
-}
+            max-width: 1100px;
+            display: flex;
+        }
+        .slider .cards{
+            margin: 0 10px;
+            height: 100%;
+            background: inherit;
+        }
+        .slider .cards .img{
+            height: 100%;
+            width: 100%;
+        }
+        .slider .cards .img img{
+            width: 100%;
+            border-radius: 15px;
+        }
+        .owl-carousel .owl-stage-outer {
+            margin-bottom: 20px;
+        }
+        .owl-carousel .owl-stage-outer .owl-item {
+            height: 380px;
+        }
         .main-row {
             position: fixed;
             left: 0;
@@ -107,6 +76,7 @@
             z-index: 1;
             height: 93vh;
             background: inherit;
+            overflow-x: hidden;
             overflow-y: scroll;
         }
         .card::before{
@@ -120,7 +90,7 @@
             border-radius: 10px;
             bottom: 7vh;
             box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-            backdrop-filter: blur(1px) saturate(100%) contrast(56%) brightness(128%);
+            /* backdrop-filter: blur(1px) saturate(100%) contrast(56%) brightness(128%); */
             margin: -20px;
         }
         .card-header {
@@ -133,24 +103,20 @@
             color: #fff;
         }
         .wa-link {
-            /* position: relative;
-            border: 3px solid #fff;
-            border-radius: 55px;
-            padding: 5px;
-            background-color: #e4cad875; */
             display: inline-block;
-            /* padding: 24px 32px; */
             border: 0;
             text-decoration: none;
             border-radius: 10px;
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(30px);
             color: rgba(255,255,255,0.8);
             font-size: 14px;
             letter-spacing: 2px;
             cursor: pointer;
             text-transform: capitalize;
+            box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.93);
+            -webkit-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.93);
+            -moz-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.93);
         }
 
         .wa-link:hover {
@@ -171,6 +137,11 @@
         .card-subtitle {
             color: #fff;
             font-weight: 800;
+        }
+
+        .carousel-sosmed{
+            position: absolute;
+            left: 0;
         }
     </style>
 </head>
@@ -215,65 +186,14 @@
                             <span class="mx-auto">Instagram</span>
                         </a>
                       </div>
-
-                      <div class="slider owl-carousel">
-                        <div class="card">
-                           <div class="img">
-                              <img src="#" alt="">
-                           </div>
-                           <div class="content">
-                              <div class="title">
-                                 Briana Tozour
-                              </div>
-                              <div class="sub-title">
-                                 Graphic Designer
-                              </div>
-                              <p>
-                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
-                              </p>
-                              <div class="btn">
-                                 <button>Read more</button>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card">
-                           <div class="img">
-                              <img src="#" alt="">
-                           </div>
-                           <div class="content">
-                              <div class="title">
-                                 Pricilla Preez
-                              </div>
-                              <div class="sub-title">
-                                 Web Developer
-                              </div>
-                              <p>
-                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
-                              </p>
-                              <div class="btn">
-                                 <button>Read more</button>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card">
-                           <div class="img">
-                              <img src="#" alt="">
-                           </div>
-                           <div class="content">
-                              <div class="title">
-                                 Eliana Maia
-                              </div>
-                              <div class="sub-title">
-                                 App Developer
-                              </div>
-                              <p>
-                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
-                              </p>
-                              <div class="btn">
-                                 <button>Read more</button>
-                              </div>
-                           </div>
-                        </div>
+                      <div class="carousel-sosmed">
+                          <div class="slider owl-carousel">
+                            <div class="cards">
+                               <div class="img">
+                                  <img src="{{ asset('storage/product/card-img.jpg') }}" alt="">
+                               </div>
+                            </div>
+                      </div>
                      </div>
                     </div>
                   </div>
@@ -318,13 +238,13 @@
            responsive: {
                 //X-Small
                 0: {
-                    items: 2
+                    items: 1.5
                 },
                 360: {
-                    items: 1
+                    items: 1.5
                 },
                 375: {
-                    items: 1
+                    items: 1.5
                 },
                 540: {
                     items: 2
@@ -335,19 +255,19 @@
                 },
                 //Medium
                 768: {
-                    items: 6
+                    items: 2
                 },
                 //Large
                 992: {
-                    items: 8
+                    items: 2
                 },
                 //Extra large
                 1200: {
-                    items: 10
+                    items: 2
                 },
                 //Extra extra large
                 1400: {
-                    items: 11
+                    items: 2
                 }
             }
          });
