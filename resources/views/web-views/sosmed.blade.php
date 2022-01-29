@@ -11,7 +11,10 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
-
+    <!-- Carousel -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,6 +25,60 @@
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/theme.minc619.css?v=1.0">
     <link rel="stylesheet" href="{{asset('assets/back-end')}}/css/toastr.css">
     <style>
+        .slider{
+  max-width: 1100px;
+  display: flex;
+}
+.slider .card{
+  flex: 1;
+  margin: 0 10px;
+  background: #fff;
+}
+.slider .card .img{
+  height: 200px;
+  width: 100%;
+}
+.slider .card .img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slider .card .content{
+  padding: 10px 20px;
+}
+.card .content .title{
+  font-size: 25px;
+  font-weight: 600;
+}
+.card .content .sub-title{
+  font-size: 20px;
+  font-weight: 600;
+  color: #e74c3c;
+  line-height: 20px;
+}
+.card .content p{
+  text-align: justify;
+  margin: 10px 0;
+}
+.card .content .btn{
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+.card .content .btn button{
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card .content .btn button:hover{
+  transform: scale(0.9);
+}
         .main-row {
             position: fixed;
             left: 0;
@@ -158,6 +215,66 @@
                             <span class="mx-auto">Instagram</span>
                         </a>
                       </div>
+
+                      <div class="slider owl-carousel">
+                        <div class="card">
+                           <div class="img">
+                              <img src="#" alt="">
+                           </div>
+                           <div class="content">
+                              <div class="title">
+                                 Briana Tozour
+                              </div>
+                              <div class="sub-title">
+                                 Graphic Designer
+                              </div>
+                              <p>
+                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                              </p>
+                              <div class="btn">
+                                 <button>Read more</button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="img">
+                              <img src="#" alt="">
+                           </div>
+                           <div class="content">
+                              <div class="title">
+                                 Pricilla Preez
+                              </div>
+                              <div class="sub-title">
+                                 Web Developer
+                              </div>
+                              <p>
+                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                              </p>
+                              <div class="btn">
+                                 <button>Read more</button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="img">
+                              <img src="#" alt="">
+                           </div>
+                           <div class="content">
+                              <div class="title">
+                                 Eliana Maia
+                              </div>
+                              <div class="sub-title">
+                                 App Developer
+                              </div>
+                              <p>
+                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                              </p>
+                              <div class="btn">
+                                 <button>Read more</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                     </div>
                   </div>
             </div>
@@ -188,9 +305,53 @@
         @endforeach
     </script>
 @endif
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <!-- JS Plugins Init. -->
 <script>
+    $(".slider").owlCarousel({
+           loop: true,
+           autoplay: true,
+           autoplayTimeout: 15000, //2000ms = 2s;
+           autoplayHoverPause: true,
+           responsive: {
+                //X-Small
+                0: {
+                    items: 2
+                },
+                360: {
+                    items: 1
+                },
+                375: {
+                    items: 1
+                },
+                540: {
+                    items: 2
+                },
+                //Small
+                576: {
+                    items: 2
+                },
+                //Medium
+                768: {
+                    items: 6
+                },
+                //Large
+                992: {
+                    items: 8
+                },
+                //Extra large
+                1200: {
+                    items: 10
+                },
+                //Extra extra large
+                1400: {
+                    items: 11
+                }
+            }
+         });
+
     $(document).on('ready', function () {
         // INITIALIZATION OF SHOW PASSWORD
         // =======================================================
