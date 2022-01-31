@@ -8,6 +8,7 @@ use App\CPU\OrderManager;
 use App\CPU\ProductManager;
 use function App\CPU\translate;
 use App\Http\Controllers\Controller;
+use App\linktree;
 use App\Model\Brand;
 use App\Model\BusinessSetting;
 use App\Model\Cart;
@@ -36,8 +37,11 @@ class WebController extends Controller
     public function sosmed()
     {
         // dd('work');
+        $sosmed = linktree::where('type', 'sosmed')->get();
+        $wa = linktree::where('type', 'wa')->get();
+        // dd($wa);
 
-        return view('web-views.sosmed');
+        return view('web-views.sosmed', compact('sosmed', 'wa'));
     }
 
     public function maintenance_mode()
