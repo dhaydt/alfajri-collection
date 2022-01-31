@@ -75,6 +75,44 @@
                         </li>
 
                         <!-- End Dashboards -->
+                        <li class="nav-item {{Request::is('admin/linktree*')?'scroll-here':''}}">
+                            <small class="nav-subtitle" title="">{{\App\CPU\translate('link_tree_management')}}</small>
+                            <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                        </li>
+                        <li class="navbar-vertical-aside-has-menu {{Request::is('admin/linktree*')?'active':''}}">
+                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                               href="javascript:">
+                                <i class="tio-link nav-icon"></i>
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                {{\App\CPU\translate('link_tree')}}
+                            </span>
+                            </a>
+                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub"
+                                style="display: {{Request::is('admin/order*')?'block':'none'}}">
+                                <li class="nav-item {{Request::is('admin/linktree')?'active':''}}">
+                                    <a class="nav-link" href="{{route('admin.linktree')}}" title="linktree">
+                                        <span class="tio-circle nav-indicator-icon"></span>
+                                        <span class="text-truncate">
+                                        {{\App\CPU\translate('social_media_link')}}
+                                        <span class="badge badge-info badge-pill ml-1">
+                                            {{\App\Model\Order::count()}}
+                                        </span>
+                                    </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item {{Request::is('admin/orders/list/pending')?'active':''}}">
+                                    <a class="nav-link " href="{{route('admin.orders.list',['pending'])}}" title="">
+                                        <span class="tio-circle nav-indicator-icon"></span>
+                                        <span class="text-truncate">
+                                        {{\App\CPU\translate('product')}}
+                                        <span class="badge badge-soft-info badge-pill ml-1">
+                                            {{\App\Model\Order::where(['order_status'=>'pending'])->count()}}
+                                        </span>
+                                    </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                         @if(\App\CPU\Helpers::module_permission_check('order_management'))
                             <li class="nav-item {{Request::is('admin/orders*')?'scroll-here':''}}">

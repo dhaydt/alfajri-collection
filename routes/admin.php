@@ -23,6 +23,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
             Route::post('order-stats', 'DashboardController@order_stats')->name('order-stats');
             Route::post('business-overview', 'DashboardController@business_overview')->name('business-overview');
         });
+
+        // linktree
+        Route::get('linktree', 'LinktreeController@index')->name('linktree');
+        Route::group(['prefix' => 'linktree', 'as' => 'linktree.'], function () {
+            Route::post('add-new', 'LinktreeController@store')->name('store');
+            Route::get('list', 'LinktreeController@list')->name('list');
+            Route::post('delete', 'LinktreeController@delete')->name('delete');
+            Route::post('status', 'LinktreeController@status')->name('status');
+            Route::post('edit', 'LinktreeController@edit')->name('edit');
+            Route::post('update', 'LinktreeController@update')->name('update');
+        });
+
         //system routes
         Route::get('search-function', 'SystemController@search_function')->name('search-function');
         Route::get('maintenance-mode', 'SystemController@maintenance_mode')->name('maintenance-mode');
