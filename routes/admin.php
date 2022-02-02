@@ -35,6 +35,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
             Route::post('update', 'LinktreeController@update')->name('update');
         });
 
+        Route::get('linktreeProduct', 'LinktreeProductController@index')->name('linktreeProduct');
+        Route::group(['prefix' => 'linktreeProduct', 'as' => 'linktreeProduct.'], function () {
+            Route::post('add-new', 'LinktreeProductController@store')->name('store');
+            Route::get('list', 'LinktreeProductController@list')->name('list');
+            Route::post('delete', 'LinktreeProductController@delete')->name('delete');
+            Route::post('status', 'LinktreeProductController@status')->name('status');
+            Route::post('edit', 'LinktreeProductController@edit')->name('edit');
+            Route::post('update', 'LinktreeProductController@update')->name('update');
+        });
+
         //system routes
         Route::get('search-function', 'SystemController@search_function')->name('search-function');
         Route::get('maintenance-mode', 'SystemController@maintenance_mode')->name('maintenance-mode');

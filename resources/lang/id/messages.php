@@ -1460,4 +1460,9 @@
   'linktree_updated_Successfully' => 'Linktree updated Successfully',
   'linktree_deleted_successfully' => 'Linktree deleted successfully',
   'Are_you_sure_delete_this_link' => 'Are you sure delete this link',
+  'add_product' => 'Add product',
+  'Product_deleted_successfully' => 'Product deleted successfully',
+  'Link Tree Product' => 'Link Tree Product',
+  'image.' => 'Image.',
+  'Image Product' => 'Image Product',
 );

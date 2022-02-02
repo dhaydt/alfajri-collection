@@ -88,26 +88,26 @@
                             </span>
                             </a>
                             <ul class="js-navbar-vertical-aside-submenu nav nav-sub"
-                                style="display: {{Request::is('admin/order*')?'block':'none'}}">
+                                style="display: {{Request::is('admin/linktree*')?'block':'none'}}">
                                 <li class="nav-item {{Request::is('admin/linktree')?'active':''}}">
                                     <a class="nav-link" href="{{route('admin.linktree')}}" title="linktree">
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                         {{\App\CPU\translate('social_media_link')}}
-                                        <span class="badge badge-info badge-pill ml-1">
+                                        {{-- <span class="badge badge-info badge-pill ml-1">
                                             {{\App\Model\Order::count()}}
-                                        </span>
+                                        </span> --}}
                                     </span>
                                     </a>
                                 </li>
-                                <li class="nav-item {{Request::is('admin/orders/list/pending')?'active':''}}">
-                                    <a class="nav-link " href="{{route('admin.orders.list',['pending'])}}" title="">
+                                <li class="nav-item {{Request::is('admin/linktreeProduct')?'active':''}}">
+                                    <a class="nav-link " href="{{route('admin.linktreeProduct')}}" title="">
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                         {{\App\CPU\translate('product')}}
-                                        <span class="badge badge-soft-info badge-pill ml-1">
+                                        {{-- <span class="badge badge-soft-info badge-pill ml-1">
                                             {{\App\Model\Order::where(['order_status'=>'pending'])->count()}}
-                                        </span>
+                                        </span> --}}
                                     </span>
                                     </a>
                                 </li>
