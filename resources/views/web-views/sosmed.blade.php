@@ -158,6 +158,13 @@
             position: absolute;
             left: 0;
         }
+        .cog-link{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+            color: #806c6c;
+        }
     </style>
 </head>
 
@@ -172,6 +179,7 @@
                 style="background-image: url('assets/front-end/img/al-bg.jpg');">
                 <div class="col-md-5 col-12">
                     <div class="card pb-5">
+                            <a href="{{ route('admin.auth.login') }}" class="cog-link p-1"><i class="fas fa-cog"></i></a>
                         <div class="card-header d-flex justify-content-center">
                             <a class="d-flex justify-content-center mb-5" href="{{ route('home') }}">
                                 <img class="z-index-2" src="{{asset("storage/company/".$e_commerce_logo)}}" alt="Logo"
@@ -254,7 +262,7 @@
     <script>
         $(".slider").owlCarousel({
            loop: true,
-           autoplay: false,
+           autoplay: true,
            autoplayTimeout: 15000, //2000ms = 2s;
            autoplayHoverPause: true,
            responsive: {
