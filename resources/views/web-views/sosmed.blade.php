@@ -206,11 +206,15 @@
                             </div>
                             <div class="carousel-sosmed">
                                 <div class="slider owl-carousel">
-                                    <div class="cards">
-                                        <div class="img">
-                                            <img src="{{ asset('storage/product/card-img.jpg') }}" alt="">
+                                    @if (count($product) > 0)
+                                        @foreach ($product as $p)
+                                        <div class="cards">
+                                            <div class="img">
+                                                <img src="{{ asset('storage/linktree') }}/{{ $p->image }}" alt="">
+                                            </div>
                                         </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -250,7 +254,7 @@
     <script>
         $(".slider").owlCarousel({
            loop: true,
-           autoplay: true,
+           autoplay: false,
            autoplayTimeout: 15000, //2000ms = 2s;
            autoplayHoverPause: true,
            responsive: {
@@ -259,7 +263,7 @@
                     items: 1.5
                 },
                 360: {
-                    items: 1.5
+                    items: 1
                 },
                 375: {
                     items: 1.5
